@@ -16,15 +16,6 @@
         Icon="/Assets/logo.ico"
         Title="{Binding Title}">
   <Panel>
-    <ExperimentalAcrylicBorder IsHitTestVisible="true">
-      <ExperimentalAcrylicBorder.Material>
-        <ExperimentalAcrylicMaterial BackgroundSource="Digger"
-                                     TintColor="LightGray"
-                                     TintOpacity="1"
-                                     MaterialOpacity="0.65" />
-      </ExperimentalAcrylicBorder.Material>
-    </ExperimentalAcrylicBorder>
-
     <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,150,Auto">
       <!-- Sidebar -->
       <Panel Grid.Row="0" Grid.Column="0" Background="LightGray">

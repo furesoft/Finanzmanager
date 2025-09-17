@@ -43,15 +43,15 @@
 
     <ScrollViewer>
       <StackPanel>
-        <Button Command="{Binding CmdDashboard}" ToolTip.Tip="Dashboard">
+        <Button Command="{Binding CmdDashboard}" ToolTip.Tip="Dashboard" Height="20">
           <StackPanel Orientation="Horizontal">
-            <PathIcon Data="{StaticResource home_regular}" />
+            <PathIcon Data="{StaticResource home_regular}"  />
             <TextBlock Text="Dashboard" />
           </StackPanel>
         </Button>
 
         <!-- Place additional buttons here... -->
-        <Button Command="{Binding .}" ToolTip.Tip="Dashboard">
+        <Button Command="{Binding .}" ToolTip.Tip="Dashboard" Height="20">
           <StackPanel Orientation="Horizontal">
             <PathIcon Data="{StaticResource lock_regular}" />
             <TextBlock Text="Something Else" />

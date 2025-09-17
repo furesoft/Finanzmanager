@@ -23,7 +23,7 @@ public class NotificationService : INotificationService
     {
         var notificationManager = new WindowNotificationManager(hostWindow)
         {
-            Position = NotificationPosition.BottomRight,
+            Position = NotificationPosition.TopRight,
             MaxItems = 4,
             Margin = new Thickness(0, 0, 15, 40)
         };

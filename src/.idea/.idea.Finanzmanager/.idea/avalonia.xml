@@ -3,6 +3,7 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="Shell/App.axaml" value="Shell/Finanzmanager.csproj" />
         <entry key="Shell/Styles/Icons.axaml" value="Shell/Finanzmanager.csproj" />
         <entry key="Shell/Views/DashboardView.axaml" value="Shell/Finanzmanager.csproj" />
         <entry key="Shell/Views/MainWindow.axaml" value="Shell/Finanzmanager.csproj" />
