@@ -1,0 +1,2 @@
+dotnet publish src/Shell/Finanzmanager.csproj -c Release --self-contained -r win-x64 -o .\publish
+vpk pack --packId furesoft.finanzmanager --packVersion 1.0.0 --packDir .\publish --mainExe Finanzmanager.exe --framework net9.0-x64-sdk
