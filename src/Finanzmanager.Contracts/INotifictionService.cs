@@ -1,7 +1,6 @@
-using System;
 using Avalonia.Controls;
 
-namespace Finanzmanager.Services;
+namespace Finanzmanager.Contracts;
 
 public interface INotificationService
 {

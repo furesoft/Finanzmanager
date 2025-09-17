@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Finanzmanager.Contracts;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -24,19 +25,11 @@ public partial class App : PrismApplication
 
     protected override AvaloniaObject CreateShell()
     {
-        Debug.WriteLine("CreateShell()");
         return Container.Resolve<MainWindow>();
     }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
-        Debug.WriteLine("RegisterTypes()");
-
-        // Note:
-        // SidebarView isn't listed, note we're using `AutoWireViewModel` in the View's AXAML.
-        // See the line, `prism:ViewModelLocator.AutoWireViewModel="True"`
-
-        // Services
         containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
 
         // Views - Region Navigation
@@ -51,21 +44,14 @@ public partial class App : PrismApplication
     /// <param name="moduleCatalog">Module Catalog.</param>
     protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
     {
-        Debug.WriteLine("ConfigureModuleCatalog()");
         base.ConfigureModuleCatalog(moduleCatalog);
     }
 
-    /// <summary>Called after Initialize.</summary>
     protected override void OnInitialized()
     {
-        Debug.WriteLine("OnInitialized()");
-
         // Register Views to the Region it will appear in. Don't register them in the ViewModel.
         var regionManager = Container.Resolve<IRegionManager>();
 
-        // WARNING: Prism v11.0.0-prev4
-        // - DataTemplates MUST define a DataType or else an XAML error will be thrown
-        // - Error: DataTemplate inside of DataTemplates must have a DataType set
         regionManager.RegisterViewWithRegion(RegionNames.ContentRegion, typeof(DashboardView));
         regionManager.RegisterViewWithRegion(RegionNames.SidebarRegion, typeof(SidebarView));
 
@@ -77,7 +63,6 @@ public partial class App : PrismApplication
     /// <param name="regionAdapterMappings">Region Adapters.</param>
     protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings regionAdapterMappings)
     {
-        Debug.WriteLine("ConfigureRegionAdapterMappings()");
         regionAdapterMappings.RegisterMapping<ContentControl, ContentControlRegionAdapter>();
     }
 }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Styling;
+using Finanzmanager.Contracts;
 using Prism.Commands;
 using Finanzmanager.Services;
 

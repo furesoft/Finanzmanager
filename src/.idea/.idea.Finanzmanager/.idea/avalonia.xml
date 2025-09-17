@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Shell/Styles/Icons.axaml" value="Shell/Finanzmanager.csproj" />
+        <entry key="Shell/Views/DashboardView.axaml" value="Shell/Finanzmanager.csproj" />
+        <entry key="Shell/Views/MainWindow.axaml" value="Shell/Finanzmanager.csproj" />
+        <entry key="Shell/Views/SettingsSubView.axaml" value="Shell/Finanzmanager.csproj" />
+        <entry key="Shell/Views/SettingsView.axaml" value="Shell/Finanzmanager.csproj" />
+        <entry key="Shell/Views/SidebarView.axaml" value="Shell/Finanzmanager.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

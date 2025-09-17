@@ -1,5 +1,6 @@
 using Avalonia;
 using Avalonia.Controls;
+using Finanzmanager.Contracts;
 using Prism.Ioc;
 using Finanzmanager.Services;
 
@@ -19,8 +20,6 @@ public partial class DashboardView : UserControl
 
         // Initialize the WindowNotificationManager with the "TopLevel". Previously (v0.10), MainWindow
         var notifyService = ContainerLocator.Current.Resolve<INotificationService>();
-#pragma warning disable CS8604 // Possible null reference argument.
-        notifyService.SetHostWindow(TopLevel.GetTopLevel(this));
-#pragma warning restore CS8604 // Possible null reference argument.
+        notifyService.SetHostWindow(TopLevel.GetTopLevel(this)!);
     }
 }
