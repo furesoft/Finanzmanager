@@ -6,6 +6,7 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:views="clr-namespace:Finanzmanager.Views;assembly=Finanzmanager"
         xmlns:vm="clr-namespace:Finanzmanager.ViewModels;assembly=Finanzmanager"
+        xmlns:status="https://github.com/xiyaowong/StatusBar.Avalonia"
         mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="500"
         x:Class="Finanzmanager.Views.MainWindow"
         x:CompileBindings="True"
@@ -49,16 +50,7 @@
 
 
       <Panel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Background="LightSteelBlue">
-        <StackPanel Orientation="Horizontal" Spacing="5" Margin="5">
-          <TextBlock Text="User Name: " FontWeight="Bold" />
-          <TextBlock Text="PrismAvalonia!" FontStyle="Italic" />
-
-          <TextBlock Text="Status:" FontWeight="Bold" />
-          <TextBlock Text="Disconnected" />
-
-          <TextBlock Text="Connection Id: " FontWeight="Bold" />
-          <TextBlock Text="0x07CC" FontStyle="Italic" />
-        </StackPanel>
+        <status:StatusBarContainer Name="_StatusBarContainer" />
       </Panel>
 
     </Grid>

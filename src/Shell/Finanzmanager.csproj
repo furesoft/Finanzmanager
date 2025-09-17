@@ -21,6 +21,7 @@
     <PackageReference Include="Prism.Avalonia" Version="9.0.537.11130" />
     <PackageReference Include="Prism.DryIoc.Avalonia" Version="9.0.537.11130" />
     <PackageReference Include="Semi.Avalonia" Version="11.2.1.9" />
+    <PackageReference Include="StatusBar.Avalonia" Version="0.0.1" />
     <PackageReference Include="Velopack" Version="0.0.1298" />
   </ItemGroup>
 

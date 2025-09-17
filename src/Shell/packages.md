@@ -6,7 +6,6 @@ https://github.com/Projektanker/Icons.Avalonia
 https://github.com/workgroupengineering/Avalonia.AdaptiveGrid
 https://github.com/AvaloniaUtils/Paginator.Avalonia
 https://github.com/Deadpikle/AvaloniaProgressRing
-https://github.com/xiyaowong/StatusBar.Avalonia
 https://github.com/wieslawsoltes/Xaml.Behaviors
 https://github.com/beto-rodriguez/LiveCharts2
 

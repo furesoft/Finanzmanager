@@ -3,9 +3,12 @@
              x:Class="Finanzmanager.App"
              xmlns:local="using:Finanzmanager"
              xmlns:semi="https://irihi.tech/semi"
+             xmlns:status="https://github.com/xiyaowong/StatusBar.Avalonia"
              RequestedThemeVariant="Default">
   <Application.Styles>
     <semi:SemiTheme />
+
+    <status:StatusBarTheme ColorTheme="GithubDefault" />
 
     <StyleInclude Source="avares://Finanzmanager/Styles/Icons.axaml" />
   </Application.Styles>
