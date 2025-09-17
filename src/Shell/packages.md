@@ -1,11 +1,7 @@
 ﻿Here is a list of controls/libraries I want to use it here:
 
-
-https://github.com/arklumpus/AvaloniaAccordion
-https://github.com/Projektanker/Icons.Avalonia
 https://github.com/workgroupengineering/Avalonia.AdaptiveGrid
 https://github.com/AvaloniaUtils/Paginator.Avalonia
-https://github.com/Deadpikle/AvaloniaProgressRing
 https://github.com/wieslawsoltes/Xaml.Behaviors
 https://github.com/beto-rodriguez/LiveCharts2
 

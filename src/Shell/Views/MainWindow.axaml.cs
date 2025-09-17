@@ -1,17 +1,20 @@
 using System.Threading.Tasks;
 using Avalonia.Controls;
+using FluentAvalonia.UI.Windowing;
 using StatusBar.Avalonia;
 
 namespace Finanzmanager.Views;
 
-/// <summary>Main window view.</summary>
-public partial class MainWindow : Window
+public partial class MainWindow : AppWindow
 {
     public StatusBarManager StatusBarManager { get; } = new();
 
     public MainWindow()
     {
         InitializeComponent();
+
+        SplashScreen = new TestSplashScreen();
+        TitleBar.ExtendsContentIntoTitleBar = true;
 
         StatusBarManager.BindContainer(_StatusBarContainer);
 

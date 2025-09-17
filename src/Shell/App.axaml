@@ -2,14 +2,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="Finanzmanager.App"
              xmlns:local="using:Finanzmanager"
-             xmlns:semi="https://irihi.tech/semi"
              xmlns:status="https://github.com/xiyaowong/StatusBar.Avalonia"
+             xmlns:styling="clr-namespace:FluentAvalonia.Styling;assembly=FluentAvalonia"
              RequestedThemeVariant="Default">
   <Application.Styles>
-    <semi:SemiTheme />
+    <styling:FluentAvaloniaTheme />
 
     <status:StatusBarTheme ColorTheme="GithubDefault" />
-
-    <StyleInclude Source="avares://Finanzmanager/Styles/Icons.axaml" />
   </Application.Styles>
 </Application>

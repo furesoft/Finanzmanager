@@ -1,33 +1,76 @@
-﻿<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:core="clr-namespace:Finanzmanager;assembly=Finanzmanager"
-        xmlns:prism="http://prismlibrary.com/"
-        xmlns:views="clr-namespace:Finanzmanager.Views;assembly=Finanzmanager"
-        xmlns:vm="clr-namespace:Finanzmanager.ViewModels;assembly=Finanzmanager"
-        xmlns:status="https://github.com/xiyaowong/StatusBar.Avalonia"
-        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="500"
-        x:Class="Finanzmanager.Views.MainWindow"
-        x:CompileBindings="True"
-        x:DataType="vm:MainWindowViewModel"
-        Height="500" Width="700"
-        TransparencyLevelHint="AcrylicBlur"
-        Background="Transparent"
-        Icon="/Assets/logo.ico"
-        Title="{Binding Title}">
-  <Panel>
+﻿<windowing:AppWindow xmlns="https://github.com/avaloniaui"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:core="clr-namespace:Finanzmanager;assembly=Finanzmanager"
+           xmlns:prism="http://prismlibrary.com/"
+           xmlns:views="clr-namespace:Finanzmanager.Views;assembly=Finanzmanager"
+           xmlns:vm="clr-namespace:Finanzmanager.ViewModels;assembly=Finanzmanager"
+           xmlns:status="https://github.com/xiyaowong/StatusBar.Avalonia"
+           xmlns:windowing="clr-namespace:FluentAvalonia.UI.Windowing;assembly=FluentAvalonia"
+           xmlns:controls="clr-namespace:FluentAvalonia.UI.Controls;assembly=FluentAvalonia"
+           mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="500"
+           x:Class="Finanzmanager.Views.MainWindow"
+           x:CompileBindings="True"
+           x:DataType="vm:MainWindowViewModel"
+           Height="500" Width="700"
+           Icon="/Assets/logo.ico"
+           Title="{Binding Title}">
+  <Grid>
+  <Grid Name="TitleBarHost"
+        ColumnDefinitions="Auto,Auto,*,Auto"
+        Background="Transparent">
+            <Image Margin="12 4"
+                   IsHitTestVisible="False"
+                   Width="18" Height="18"
+                   DockPanel.Dock="Left"
+                   Name="WindowIcon"
+                   RenderOptions.BitmapInterpolationMode="HighQuality">
+                <Image.IsVisible>
+                    <OnPlatform Default="False">
+                        <On Options="Windows" Content="True" />
+                    </OnPlatform>
+                </Image.IsVisible>
+            </Image>
+
+            <TextBlock Text="{Binding Title, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                       FontSize="12"
+                       IsHitTestVisible="False"
+                       VerticalAlignment="Center"
+                       Grid.Column="1">
+                <TextBlock.IsVisible>
+                    <OnPlatform Default="False">
+                        <On Options="Windows" Content="True" />
+                    </OnPlatform>
+                </TextBlock.IsVisible>
+            </TextBlock>
+
+            <Border Grid.Column="2" Padding="6">
+                <AutoCompleteBox Name="SearchBox" x:CompileBindings="False"
+                                 MaxWidth="500"
+                                 Watermark="Search"
+                                 Classes="SampleApp">
+                    <AutoCompleteBox.ItemTemplate>
+                        <DataTemplate>
+                            <Panel>
+                                <StackPanel HorizontalAlignment="Left"
+                                            VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding Header}" />
+                                    <TextBlock Text="{Binding Namespace}"
+                                               Theme="{StaticResource CaptionTextBlockStyle}"
+                                               Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}"
+                                               FontStyle="Italic"/>
+                                </StackPanel>
+                            </Panel>
+                        </DataTemplate>
+                    </AutoCompleteBox.ItemTemplate>
+                </AutoCompleteBox>
+            </Border>
+        </Grid>
     <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,150,Auto">
-      <!-- Sidebar -->
-      <Panel Grid.Row="0" Grid.Column="0" Background="LightGray">
+      <views:SidebarView Grid.Row="0" Grid.Column="0" />
 
-        <!--
-          The SidebarView is not using a region on purpose, so it shows in designer mode
-          <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.SidebarRegion}" />
-        -->
-        <views:SidebarView />
-      </Panel>
-
+      <controls:Frame Name="FrameView" />
       <!-- Main Content -->
       <ContentControl Grid.Row="0"
                       Grid.Column="1"
@@ -36,8 +79,7 @@
       <!-- Footer -->
       <Panel Grid.Column="0"
              Grid.ColumnSpan="2"
-             Grid.Row="1"
-             Background="LightGray">
+             Grid.Row="1">
         <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.FooterRegion}" />
       </Panel>
 
@@ -48,11 +90,9 @@
                     BorderThickness="1"
                     Background="LightGray" />
 
-
       <Panel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Background="LightSteelBlue">
         <status:StatusBarContainer Name="_StatusBarContainer" />
       </Panel>
-
     </Grid>
-  </Panel>
-</Window>
+  </Grid>
+</windowing:AppWindow>
