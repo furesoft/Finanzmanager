@@ -4,7 +4,7 @@ using Avalonia.Media;
 using FluentAvalonia.UI.Windowing;
 
 namespace Finanzmanager.Views;
-
+// content: https://github.com/amwx/FluentAvalonia/blob/master/samples/FAControlsGallery/Views/MainAppSplashContent.axaml.cs#L10
 internal class MainAppSplashScreen : IApplicationSplashScreen
 {
     public MainAppSplashScreen(MainWindow owner)
