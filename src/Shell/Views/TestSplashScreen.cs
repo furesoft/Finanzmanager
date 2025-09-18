@@ -5,20 +5,27 @@ using FluentAvalonia.UI.Windowing;
 
 namespace Finanzmanager.Views;
 
-public class TestSplashScreen : IApplicationSplashScreen
+internal class MainAppSplashScreen : IApplicationSplashScreen
 {
-    public TestSplashScreen()
+    public MainAppSplashScreen(MainWindow owner)
     {
-        SplashScreenContent = "loading...";
-    }
-    
-    public async Task RunTasks(CancellationToken cancellationToken)
-    {
-        await Task.Delay(3000);
+        _owner = owner;
     }
 
     public string AppName { get; }
     public IImage AppIcon { get; }
-    public object SplashScreenContent { get; }
-    public int MinimumShowTime { get; }
+    public object SplashScreenContent => new MainAppSplashContent();
+    public int MinimumShowTime => 2000;
+
+    public Action InitApp { get; set; }
+
+    public Task RunTasks(CancellationToken cancellationToken)
+    {
+        if (InitApp == null)
+            return Task.CompletedTask;
+
+        return Task.Run(InitApp, cancellationToken);
+    }
+
+    private MainWindow _owner;
 }
