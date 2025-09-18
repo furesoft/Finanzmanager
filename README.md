@@ -2,6 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Discord](https://img.shields.io/discord/455738571186241536)
 [![](https://tokei.rs/b1/github/furesoft/Silverfly)](https://github.com/furesoft/Silverfly)
+[![Crowdin](https://badges.crowdin.net/finanzmanager/localized.svg)](https://crowdin.com/project/finanzmanager)
 
 # Finanzmanager
 
