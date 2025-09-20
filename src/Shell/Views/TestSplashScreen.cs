@@ -1,17 +1,13 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Avalonia.Media;
 using FluentAvalonia.UI.Windowing;
 
 namespace Finanzmanager.Views;
-// content: https://github.com/amwx/FluentAvalonia/blob/master/samples/FAControlsGallery/Views/MainAppSplashContent.axaml.cs#L10
-internal class MainAppSplashScreen : IApplicationSplashScreen
-{
-    public MainAppSplashScreen(MainWindow owner)
-    {
-        _owner = owner;
-    }
 
+internal class MainAppSplashScreen(MainWindow owner) : IApplicationSplashScreen
+{
     public string AppName { get; }
     public IImage AppIcon { get; }
     public object SplashScreenContent => new MainAppSplashContent();
@@ -27,5 +23,5 @@ internal class MainAppSplashScreen : IApplicationSplashScreen
         return Task.Run(InitApp, cancellationToken);
     }
 
-    private MainWindow _owner;
+    private MainWindow _owner = owner;
 }
