@@ -21,7 +21,7 @@
     <PackageReference Include="FluentAvaloniaUI" Version="2.4.0" />
     <PackageReference Include="Prism.Avalonia" Version="9.0.537.11130" />
     <PackageReference Include="Prism.DryIoc.Avalonia" Version="9.0.537.11130" />
-    <PackageReference Include="StatusBar.Avalonia" Version="0.0.1" />
+    <PackageReference Include="StatusBar.Avalonia" Version="0.0.2" />
     <PackageReference Include="Velopack" Version="0.0.1298" />
   </ItemGroup>
 

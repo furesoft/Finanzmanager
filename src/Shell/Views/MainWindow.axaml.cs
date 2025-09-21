@@ -25,6 +25,8 @@ public partial class MainWindow : AppWindow
         status.Show();
         status.Text = "$(sync~spin) Syncing...";
 
-        statusBarManager.SetStatusBarMessage("$(sync~spin) Hello World from StatusBarManager", async () => await Task.Delay(30000));
+        statusBarManager.SetStatusBarMessage("$(sync~spin) Hello World from StatusBarManager",
+            async () => await Task.Delay(30000),
+            new TemporaryMessageOptions { Alignment = StatusBarAlignment.Center});
     }
 }
